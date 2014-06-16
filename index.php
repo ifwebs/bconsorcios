@@ -8,6 +8,7 @@
 <meta name="description" content="" />
 
 <?php include 'includes/head.php';?>
+<?php require_once 'includes/conexao.php';?>
 </head>
 <body>
 	<div class="all">

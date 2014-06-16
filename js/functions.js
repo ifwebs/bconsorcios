@@ -36,5 +36,40 @@ $(document).ready(function() {
 
         }
     });
+    
+    $('#ajax_form').submit(function(){
+    	var dados = jQuery( this ).serialize();
+
+    	jQuery.ajax({
+    		type: "POST",
+    		url: "includes/newsletter.php",
+    		data: dados,
+    		success: function( data ){
+    			$("#msg").addClass('alert-ok').text(" Email salvo com sucesso!");
+    		},
+	    	error: function( data ){
+				$("#msg").addClass('alert-erro').text(" Erro ao salvar email!");
+			} 
+    	});
+    	
+    	return false;
+    });
 
 });
+
+/*jQuery('#ajax_form').submit(function(){
+	var dados = jQuery( this ).serialize();
+
+	jQuery.ajax({
+		type: "POST",
+		url: "includes/newsletter.php",
+		data: dados,
+		success: function( data )
+		{
+			alert( data );
+		}
+	});
+	
+	return false;
+});
+});*/

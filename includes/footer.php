@@ -27,10 +27,11 @@
 					<h2 class="footer-h2">PAGUE COM:</h2>
 					<img src="images/pag.jpg" alt="">
 					<h2 class="footer-h2">Newsletter</h2>
-					<form action="">
-						<input type="text" placeholder="Digite seu email">
-						<span class="alert-ok">Email salvo com sucesso!<br></span>
-						<span class="alert-erro">Erro ao salvar email!</span>
+					<form method="post" action="" id="ajax_form">
+						<input type="text" placeholder="Digite seu email" name="email">
+						<span id="msg"></span>
+						<!-- <span class="alert-ok">Email salvo com sucesso!<br></span>
+						<span class="alert-erro">Erro ao salvar email!</span> -->
 					</form>
 				</section>
 				<section>

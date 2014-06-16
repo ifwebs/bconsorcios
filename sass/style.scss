@@ -636,13 +636,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     .alert-ok{
         color: #39a100;
         &::before{
-            content:"✔";
+            content:"'&radic;'";
         }
     }
     .alert-erro{
         color: #b30d1c;
         &::before{
-            content:"☓";
+            content:"&times;";
             font-weight: 900;
         }
     }
