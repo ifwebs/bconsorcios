@@ -14,7 +14,7 @@
 	<div class="all">
 		<?php include 'includes/header.php';?>
 		<div class="clear"></div>
-		<?php include 'includes/banner.php';?>
+		<br>
 		<section class="planos content">
 			<?php 
 				$sql = mysql_query("SELECT * FROM categorias_consorcios");

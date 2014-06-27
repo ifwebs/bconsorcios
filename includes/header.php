@@ -1,21 +1,21 @@
 <header class="header">
 	<div class="content">
 		<figure class="logo">
-			<a href=""><img src="images/logo.png" alt=""></a>
+			<a href="<?php echo $base_url?>"><img src="<?php echo $base_url?>images/logo.png" alt=""></a>
 		</figure>
 		<nav class="menu">
 			<ul>
-				<li class="active"><a href="">Home</a></li>
-				<li><a href="">Institucional</a>
+				<li class="active"><a href="<?php echo $base_url?>">Home</a></li>
+				<li><a href="#">Institucional</a>
 					<ul>
-						<li><a href="">O consórcio</a></li>
-						<li><a href="">Quem somos</a></li>
-						<li><a href="">Perguntas frequentes</a></li>
+						<li><a href="<?php echo $base_url?>o-consorcio">O consórcio</a></li>
+						<li><a href="<?php echo $base_url?>quem-somos">Quem somos</a></li>
+						<li><a href="<?php echo $base_url?>perguntas-frequentes">Perguntas frequentes</a></li>
 					</ul>
 				</li>
-				<li><a href="">Produtos</a></li>
-				<li><a href="">Vantagens</a></li>
-				<li><a href="">Contato</a></li>
+				<li><a href="<?php echo $base_url?>produtos">Produtos</a></li>
+				<li><a href="<?php echo $base_url?>vantagens">Vantagens</a></li>
+				<li><a href="<?php echo $base_url?>contato">Contato</a></li>
 			</ul>
 		</nav>
 		<div class="fone-menu">

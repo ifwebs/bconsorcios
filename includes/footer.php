@@ -3,21 +3,23 @@
 		<section>
 			<h2>Sobre nós</h2>
 			<figure>
-				<a href=""><img src="images/logo.png" alt=""></a>
-				<figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non diam erat. In fringilla massa ut nisi ullamcorper pellentesque. Quisque non luctus sem. Nullam non magna vel nisi posuere bibendum vitae sed dui...<br>
-					<a href="">Continue lendo »</a></figcaption>
+				<a href="<?php echo $base_url?>"><img src="<?php echo $base_url?>images/logo.png" alt=""></a>
+				<figcaption>Fruto da criatividade brasileira e instrumento fantástico na captação de poupança, o consórcio surgiu no país no início dos anos 60...<br>
+					<a href="<?php echo $base_url?>o-consorcio">Continue lendo »</a></figcaption>
 				</figure>
 			</section>
 			<section>
 				<h2>Links</h2>
 				<ul>
-					<li><a href="">Automóvel</a></li>
-					<li><a href="">Imóvel</a></li>
-					<li><a href="">Caminhão</a></li>
-					<li><a href="">Moto</a></li>
-					<li><a href="">Institucional</a></li>
-					<li><a href="">Perguntas Frequentes</a></li>
-					<li><a href="">Vantagens</a></li>
+					<?php 
+						$sql = mysql_query("SELECT * FROM categorias_consorcios");
+						while($row = mysql_fetch_array($sql)){
+							echo "<li><a href='{$base_url}categoria/{$row['id']}-{$row['slug']}'>{$row['nome']}</a></li>";
+						}
+					?>
+					<li><a href="<?php echo $base_url?>o-consorcio">O Consórcio</a></li>
+					<li><a href="<?php echo $base_url?>perguntas-frequentes">Perguntas Frequentes</a></li>
+					<li><a href="<?php echo $base_url?>vantagens">Vantagens</a></li>
 				</ul>
 			</section>
 			<section>
@@ -25,7 +27,7 @@
 				<p>Segunda à Sexta das 08h às 18h <br>
 					Sábado 09h às 12h</p>
 					<h2 class="footer-h2">PAGUE COM:</h2>
-					<img src="images/pag.jpg" alt="">
+					<img src="<?php echo $base_url?>images/pag.jpg" alt="">
 					<h2 class="footer-h2">Newsletter</h2>
 					<form method="post" action="" id="ajax_form">
 						<input type="text" placeholder="Digite seu email" name="email">
@@ -50,7 +52,7 @@
 						<div class="copy">
 							<p>Copyright © 2014 BConsórcios - Todos os direitos reservados.</p>
 							<figure>
-								<a href="http://www.ifwebs.com" target="_blank"><img src="images/ifwebs.png" alt="IfWebs" title="IfWebs"></a>
+								<a href="http://www.ifwebs.com" target="_blank"><img src="<?php echo $base_url?>images/ifwebs.png" alt="IfWebs" title="IfWebs"></a>
 							</figure>
 						</div>
 						<div class="clear"></div>
@@ -59,4 +61,4 @@
 				</div>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="http://unslider.com/unslider.min.js"></script>
-<script src="js/functions.js"></script>
+<script src="<?php echo $base_url?>js/functions.js"></script>

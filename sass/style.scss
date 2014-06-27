@@ -8,6 +8,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     color: #737b7f;
+    list-style: none;
 }
 
 /*========================FONT-FACE==============================*/
@@ -68,6 +69,7 @@ $Preto: black;
 $PretoFosco: #2e2e2e;
 $Vermelho: #e1261d;
 $VermelhoEscuro: #ae2124;
+$VermelhoClaro: #ff010c;
 $AzulClaro: #00b4da;
 $Cinza: #737b7f;
 $CinzaClaro: #dadadc;
@@ -478,15 +480,32 @@ hr{
 /*=====================================PLANOS================================================*/
 .planos {
     margin-top: 40px;
+    @include model(1100px, 300px);
+    display: block;
+    overflow: hidden;
+    .box-planos1,.box-planos2,.box-planos3,.box-planos4{
+        position:absolute;
+    }
+    .box-planos1{
+        left:60px;
+    }
+    .box-planos2{
+        left:340px;
+    }
+    .box-planos3{
+        left:620px;
+    }
+    .box-planos4{
+        left:900px;
+    }
     article {
-        width: 225px;
+       @include model(300px, 250px);
         padding-top: 30px;
         text-align: center;
         float: left;
         margin:0;
         padding:10px 20px 30px 20px;
         &:hover{
-            background-color:$Vermelho;
             -webkit-transition: background .5s, opacity .5s;
             -moz-transition: background .5s, opacity .5s;
             transition: background .5s, opacity .5s;
@@ -494,12 +513,6 @@ hr{
             h1{color:$Branco;span{color:$Branco;font-weight:900;}}
             h2{color:$Branco;}
             figcaption{color:$Branco;}
-            .thumb-hover{
-                display:block;
-                -webkit-transition: background 1s, opacity 1s;
-                -moz-transition: background 1s, opacity 1s;
-                transition: background 1s, opacity 1s;
-            }
         }
     }
     h1 {
@@ -531,17 +544,510 @@ hr{
 }
 .thumb-hover{
     position:relative;
-    top: 140px;
+    top: -80px;
+    left:0px;
     color: $Branco;
-    height: 140px;
-    width: 225px;
+    height: 240px;
+    width: 280px;
+    display: block;
     line-height: 140px;
     background: rgba(0,0,0, 0.5);
     font-family: $Avevir;
     font-size: 30px;
     z-index: 50;
     margin-top: -140px;
-    display: none;
+    background-color:$Vermelho;
+    box-shadow: 1px 5px 10px $Cinza;
+    opacity: 0;
+    h2{
+        font-size: 28px;
+        text-transform: uppercase;
+        text-align: center;
+        padding:50px 10px 10px 10px;
+        color: $Branco;
+    }
+    p{
+        font-size: 14px;
+        text-align: left;
+        padding:0px 10px 10px 10px;
+        line-height: 16px;
+        color: $Branco;
+    }
+    &:hover{
+        -webkit-transition: background .5s, opacity .5s;
+        -moz-transition: background .5s, opacity .5s;
+        transition: background .5s, opacity .5s;
+                opacity: 1;
+    }
+}
+/*=====================================LISTAS================================================*/
+.lista{
+	padding-top:40px;
+	 h1{
+	 	font-family: $Avevir;
+        font-size: 52px;
+        color: $Vermelho;
+        text-align: left;
+        font-weight: 100;
+        line-height: 20px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+	 }
+	 .texto{
+	 	@include model(700px, 78px);
+	 	float: left;
+	 	p{font-family: $Avevir;}
+	 }
+	 .icon_car{
+	 	float: right;
+	 	li{display:inline-block;}
+   	 	.icon_carro{
+   	 		background:url(../images/sprite-carros.png) 0 0px no-repeat;
+   	 		width: 114px;
+			height: 40px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+   	 	.icon_house{
+   	 		background:url(../images/sprite-carros.png) 0 -47px no-repeat;
+   	 		width: 64px;
+			height: 47px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+   	 	.icon_bike{
+   	 		background:url(../images/sprite-carros.png) 0 -107px no-repeat;
+   	 		width: 74px;
+			height: 47px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+   	 	.icon_van{
+   	 		background:url(../images/sprite-carros.png) 0 -167px no-repeat;
+   	 		width: 114px;
+			height: 47px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+	 }
+}
+.tabelaplanos {
+	margin:0px;padding:0px;
+	width:100%;
+}.tabelaplanos table{
+    border-collapse: collapse;
+     border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}
+.tabelaplanos tr:nth-child(odd){ background-color:#ebebeb; }
+.tabelaplanos tr:nth-child(even)    { background-color:#ffffff; }.tabelaplanos td{
+	vertical-align:middle;
+	text-align:center;
+	padding:7px;
+	font-size:17px;
+	font-family:$Avevir;
+	color:$Cinza;
+}.tabelaplanos tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.tabelaplanos tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.tabelaplanos tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.tabelaplanos tr:first-child td{
+		background:-o-linear-gradient(bottom, #e2261d 5%, #e2261d 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e2261d), color-stop(1, #e2261d) );
+	background:-moz-linear-gradient( center top, #e2261d 5%, #e2261d 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2261d", endColorstr="#e2261d");	background: -o-linear-gradient(top,#e2261d,e2261d);
+	background-color:#e2261d;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:17px;
+	font-family:$Avevir;
+	font-weight:bold;
+	color:#ffffff;
+}
+.tabelaplanos tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #e2261d 5%, #e2261d 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e2261d), color-stop(1, #e2261d) );
+	background:-moz-linear-gradient( center top, #e2261d 5%, #e2261d 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2261d", endColorstr="#e2261d");	background: -o-linear-gradient(top,#e2261d,e2261d);
+
+	background-color:#e2261d;
+}
+.tabelaplanos tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.tabelaplanos tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+.comprar{
+	@include model(148px, 35px);
+	background: $Vermelho;
+	display: block;
+	margin: 0px auto;
+	color: $Branco;
+	padding-top: 5px;
+	font-size: 25px;
+	border-bottom: solid 5px $VermelhoEscuro;
+	text-transform:uppercase;
+	&:hover{
+		border-bottom: solid 5px $Vermelho;
+	}
+	&:active{
+		position: relative;
+		top: 2px;
+	}
+}
+/*=====================================DETALHES================================================*/
+.detalhes{
+	.voltar{
+		color:$VermelhoClaro;
+		font-family: $Avevir;
+		font-weight:bold;
+	}
+	.detalhes_con{
+		margin-top: 20px;
+	}
+	ul{
+		@include model(516px, 126px);
+		margin-top: 50px;
+	}
+	p{
+		font-family: $Avevir;
+		margin-top: 20px;
+	}
+	.p_ri{
+		text-transform: uppercase;
+		color: $VermelhoClaro;
+		float: left;
+		margin: 0px;
+	}
+	.p_le{
+		float: right;
+		margin: 0px;
+	}
+	h1{
+		font-family: $Avevir;
+		font-size: 35px;
+		color: $Cinza;
+		margin-top: 35px;
+	}
+	h2{
+		font-family: $Avevir;
+		text-transform: uppercase;
+		color: $Vermelho;
+		font-size: 16px;
+	}
+	.details_final{
+		@include model(826px, 62px);
+		margin: 0px auto;
+		li{
+			display:inline-block;
+			.comprar{
+				@include model(130px, 20px);
+				position: relative;
+				bottom: 18px;
+				left: 10px;	
+			}
+			a{font-size: 15px;text-align: center; text-transform: none; font-family: $Avevir;}
+		}
+	}
+	.compartilhe{
+		@include model(260px, 48px);
+		margin-top: 0px;
+		li{
+			display:inline-block;
+			margin-left: 5px;
+			&:first-chil{margin-left:0px;}
+		}
+		p{font-size: 20px;}
+		.icon_plus{
+   	 		background:url(../images/sprite-comp.png) 0 0px no-repeat;
+   	 		width: 22px;
+			height: 19px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+   	 	.icon_face{
+   	 		background:url(../images/sprite-comp.png) -33px 0px no-repeat;
+   	 		width: 22px;
+			height: 19px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+   	 	.icon_t{
+   	 		background:url(../images/sprite-comp.png) -60px 0px no-repeat;
+   	 		width: 22px;
+			height: 19px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+		.icon_mail{
+   	 		background:url(../images/sprite-comp.png) -94px 0px no-repeat;
+   	 		width: 22px;
+			height: 19px;
+			display: block;
+			&:hover{
+				opacity:0.65;
+				-moz-opacity: 0.65;
+				filter: alpha(opacity=65);
+			}
+   	 	}
+	} 
+}
+/*====================================== COMPRA ===================================*/
+.compra{
+	padding-top:20px;
+	h1{
+		font-family: $Avevir;
+		font-size: 35px;
+		color: $Vermelho;
+		margin-top: 35px;
+	}
+	h2{
+		text-align: center;
+		color: $CinzaClaro;
+		text-transform: uppercase;
+		font-family: $Avevir;
+		font-size: 30px;
+		margin-top: 30px;
+	}
+	hr{
+		height: 1px;
+		margin: 0px 0 10px 0;
+	}
+	p{
+		font-family: $Avevir;
+		font-size: 14px;
+	}
+	.links_form{
+		text-align: center;
+		margin-top:60px;
+		li{
+			display:inline-block;
+			margin-left: 25px;
+		}
+		a{
+			font-family: $Avevir;
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+		.ativo{color:$Vermelho;}
+	}
+	form {
+	    margin:0 auto 15%;
+		margin-bottom: 15px;
+		width: 540px;
+		float: left;
+	}
+	label{font-family: $Avevir;}
+	input, textarea, select {
+	    width:429px;
+	    height:32px;
+	    border:1px solid #dedede;
+	    padding:4px;
+	    margin-top:3px;
+	    font-size:0.9em;
+	    color:#3a3a3a;
+	    margin-bottom: 15px;
+	}
+	input[type="radio"] {
+		width:15px;
+	    height:15px;
+	    margin-left: 5px;
+	}
+	input[type="checkbox"]{
+		height: 10px;
+		width: 10px;
+	}
+	.valores{
+		@include model(369px, 316px);
+		float: right;
+		margin-top: 210px;
+		h3{
+			color: $CinzaClaro; 
+			font-family: $Avevir;
+			font-size: 24px; 
+			text-transform: uppercase;
+			b{color:$VermelhoClaro;padding-left: 30px;} 
+		}
+		h2{
+			text-align: left;
+		}
+		h1{
+			margin: 0px;
+			font-size: 60px;
+		}
+	}
+
+}
+/*====================================== PERGUNTAS ===================================*/
+.perguntas{
+	padding-top:20px;
+	h1{
+		font-family: $Avevir;
+		font-size: 35px;
+		color: $Vermelho;
+		margin-top: 35px;
+	}
+	#accordion section, #accordion .pointer, #accordion h1, #accordion p {
+	  -webkit-transition: all 0.5s ease-in-out;
+	  -moz-transition: all 0.5s ease-in-out;
+	  -ms-transition: all 0.5s ease-in-out;
+	  transition: all 0.5s ease-in-out;
+	}
+	#accordion {
+	  margin-bottom:30px;
+	}
+	#accordion h1 {
+	  line-height:1.2;
+	  font-size:20px;
+	  background-color:$Vermelho;
+	  margin:0;
+	  padding: 0px 10px 10px 30px;
+	  border-radius: 10px;
+	}
+	
+	#accordion h1 a {
+	  color:$Branco;
+	  font-family: $Avevir;
+	}
+	#accordion section {
+	  overflow:hidden;
+	  height:220px;
+	}
+	#accordion p {
+	  padding:0 10px;
+	  color:$Cinza;
+	  font-family: $Avevir;
+	  font-size: 18px;
+	}
+	#accordion section.ac_hidden p:not(.pointer) {
+	  color:#fff;
+	}
+	
+	#accordion section.ac_hidden {
+	  height:70px;
+	}
+	#accordion .pointer {
+	  padding:0;
+	  margin:10px 0 0 6px;
+	  line-height:20px;
+	  width:13px;
+	  position:absolute;
+	}
+	#accordion section:not(.ac_hidden) h1 {
+	  background-color:$VermelhoClaro;
+	}
+	
+	#accordion section:not(.ac_hidden) .pointer {
+	  display:block;
+	  -webkit-transform:rotate(90deg);
+	  -moz-transform:rotate(90deg);
+	  -o-transform:rotate(90deg);
+	  transform:rotate(90deg);
+	  padding:0;
+	}
+}
+/*====================================== CONSORCIO ===================================*/
+.consorcio{
+	padding-top:20px;
+	h1{
+		font-family: $Avevir;
+		font-size: 35px;
+		color: $Vermelho;
+		margin-top: 35px;
+	}
+	h2, p{
+		font-family: $Avevir;
+	}
+}
+/*====================================== CONTATO ===================================*/
+.contato{
+	padding-top:20px;
+	h1{
+		font-family: $Avevir;
+		font-size: 35px;
+		color: $Vermelho;
+		margin-top: 35px;
+	}
+	/*Form*/
+	label {
+	    display:block;
+	    margin-top:20px;
+	    letter-spacing:2px;
+		color:#000000;
+		font-family: $Avevir;
+	}
+	form {
+	    margin:0 auto 15%;
+		margin-bottom: 15px;
+		width: 500px;
+	}
+	
+	/* Style the text boxes */
+	textarea {
+		height:213px !important;
+		background:#efefef;
+	}
+	input, textarea {
+	    width:100%;
+	    height:32px;
+	    background:#efefef;
+	    border:1px solid #dedede;
+	    padding:4px;
+	    margin-top:3px;
+	    font-size:0.9em;
+	    color:#3a3a3a;
+	    -moz-border-radius:5px;
+	    -webkit-border-radius:5px;
+	    border-radius:5px;
+	}
+	input:focus, textarea:focus {
+	    border:1px solid #97d6eb;
+	}
+	#submit {
+	    width: auto;  
+	    padding: 9px 15px;  
+	    background: #ff1621;  
+	    border: 0;  
+	    font-size: 14px;  
+	    color: #FFFFFF;  
+	    -webkit-border-radius: 5px;  
+	    -moz-border-radius: 5px;  
+	}
+	#submit:hover {
+		opacity:.9;
+	}
 }
 /*====================================== RODAPE ===================================*/
 footer{
