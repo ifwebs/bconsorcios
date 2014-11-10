@@ -1,0 +1,334 @@
+* {
+	font-family: 'Open Sans',Tahoma, 'AgencyFBBold' , 'AgencyFBRegular', Verdana, Helvetica, Arial, sans-serif;
+}
+
+img {
+	border:none;
+}
+
+body {
+	background-color:#f9f9f9;
+	margin:0px;
+	padding:0px;
+}
+
+h3 {
+	color:#D92816;
+	font-size:24px;
+	padding:0px;
+	margin:0px;
+}
+
+hr {
+	margin:0px;
+	margin-top:10px;
+}
+
+div#conteudoGeral {
+	width:1000px;
+	margin:0 auto;
+}
+
+div#topo {
+
+}
+
+div#topo img {
+	
+}
+
+div#topo ul#menuSuperior {
+	padding-top:13px;
+}
+
+div#topo ul#menuSuperior li {
+	display:inline;	
+	margin-left:20px;
+}
+
+div#topo ul#menuSuperior li a{
+	
+}
+
+div#topo ul#menuSuperior li a:hover{
+	text-decoration:underline;	
+}
+
+div#conteudoMeio {
+	position: relative;
+	width: 100%;
+	left: 0px;
+	margin: 0 auto;
+	margin-top:90px;
+}
+
+div#conteudo {
+	min-height:450px; 
+	width:650px;
+	text-align: justify;
+}
+
+div#conteudoMeioContainer{
+	width:1000px;
+	margin: 0 auto;
+	overflow:auto;
+}
+
+div#containerFormContato {
+	position: absolute;
+	top: -80px;
+	margin:0 auto;
+	width:280px;
+}
+
+div#containerFormContato h2 {
+	font-size:24px;
+	margin:0px;
+	padding:0px;
+	color:#737B7F;
+}
+
+form#formularioContato {
+	margin:0 auto;
+}
+
+form#formularioContato input,textarea{
+	margin-bottom:15px;
+	font-size:14px;
+	padding:5px;
+	margin-left:10px;
+}
+
+form#formularioContato input[type=text] {
+	width:246px;
+}
+
+form#formularioContato input[type=submit]{
+	width:256px;
+	font-size:24px;
+	padding:10px;
+}
+
+form#formularioContato textarea {
+	width:246px;
+	height:126px;
+}
+
+p#textoExplicativoFormContato {
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:bold;
+	padding-top:10px;
+	color:white;
+	width:246px;	
+	margin-left:10px;
+}
+
+div#conteudoRodape {
+	clear:both !important;
+	overflow:auto;
+	font-size:12px;
+}
+
+div#conteudoRodape h3 {
+	font-size:14px;
+	font-weight:bold;
+	padding:0px;
+	margin:0px;
+}
+
+div#conteudoRodape .links {
+	margin-left:30px;
+	font-size:16px;
+}
+
+.width1000px {
+	width:1000px !important;
+}
+
+.width270px{
+	width:270px;
+}
+
+.marginLeft280 {
+	margin-left:280px;
+}
+
+.marginLeft320px{
+	margin-left:311px;
+}
+
+.marginLeft10px{
+	margin-left:10px;	
+}
+
+.marginLeft30px{
+	margin-left:30px;	
+}
+
+
+.marginLeft40px{
+	margin-left:40px;	
+}
+
+
+.paddingTop20px{
+	padding-top:20px;
+}
+
+.floatRight {
+	float:right;
+}
+
+.floatLeft {
+	float:left;
+}
+
+.fontSize14 {
+	font-size:14px;
+}
+
+.fontSize18 {
+	font-size:18px;
+}
+
+.fontSize25 {
+	font-size:25px;
+}
+
+p.telefone:hover {
+	font-size:30px;
+} 
+
+.noUnderline {
+	text-decoration:none;
+}
+
+.fontCinzaPadrao {
+	color: #7E6767;
+}
+
+.fontVermelhoPadrao {
+	color: #D92816;
+}
+
+.overflowAuto {
+	overflow:auto;
+}
+
+.padding10px{
+	padding:10px;
+}
+
+.backgroundVermelhoPadrao {
+	background-color:#D92816;
+}
+
+.backgroundAzul{
+	background-color:blue;
+}
+
+.backgroundCinza{
+	background-color: silver;
+}
+
+.backgroundAmarelo{
+	background-color: yellow;
+}
+
+.backgroundVerde{
+	background-color: green;
+}
+
+.backgroundBranco {
+	background-color: white;
+}
+
+table.saibaMais tr {
+	line-height: 30px;
+}
+
+ul.menuAdmin {
+	padding:20px;
+	font-size:18px;
+}
+
+ul.menuAdmin li {
+	list-style: none;
+}
+
+ul.menuAdmin a {
+	text-decoration: none;
+	color:white !important;
+}
+
+ul.menuAdmin a:hover {
+	text-decoration: underline;
+	color:black !important;
+}
+
+.hide {
+	display:none;
+}
+
+/* Menu categorias de consorcios */
+div#menuCategoriasConsorcios {
+	overflow:auto;
+}
+
+div#menuCategoriasConsorcios a {
+	width:82px !important;
+	height:82px !important;
+	background-color:transparent !important;
+	text-indent:-9999px;
+	display:block;
+	float:left;
+}
+
+div#menuCategoriasConsorcios a.automovel {
+	background:transparent url(carro.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.automovel-sel {
+	background:transparent url(carro-sel.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.automovel:hover {
+	background:transparent url(carro-sel.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.imovel {
+	background:transparent url(casa.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.imovel-sel {
+	background:transparent url(casa-sel.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.imovel:hover {
+	background:transparent url(casa-sel.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.caminhao {
+	background:transparent url(caminhao.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.caminhao-sel {
+	background:transparent url(caminhao-sel.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.caminhao:hover {
+	background:transparent url(caminhao-sel.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.moto {
+	background:transparent url(moto.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.moto-sel {
+	background:transparent url(moto-sel.png) top left no-repeat;
+}
+
+div#menuCategoriasConsorcios a.moto:hover {
+	background:transparent url(moto-sel.png) top left no-repeat;
+}

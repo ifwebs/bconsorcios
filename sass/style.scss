@@ -7,8 +7,13 @@
     line-height: normal;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    color: #737b7f;
+    color: #a3a3a3;
     list-style: none;
+}
+
+body {
+    background-color: #f7f7f7;
+    overflow-x: hidden;
 }
 
 /*========================FONT-FACE==============================*/
@@ -46,8 +51,8 @@
 
 @font-face {
     font-family: 'AvenirMedium';
-    src: url("../css/fonts/avenir-medium.eot");
-    src: url("../css/fonts/avenir-medium.eot") format("embedded-opentype"), url("../css/fonts/avenir-medium.woff") format("woff"), url("../css/fonts/avenir-medium.ttf") format("truetype"), url("../css/fonts/avenir-medium.svg#AvenirMedium") format("svg");
+    src: url("fonts/avenir-medium.eot");
+    src: url("fonts/avenir-medium.eot") format("embedded-opentype"), url("fonts/avenir-medium.woff") format("woff"), url("fonts/avenir-medium.ttf") format("truetype"), url("fonts/avenir-medium.svg#AvenirMedium") format("svg");
 }
 
 
@@ -71,8 +76,9 @@ $Vermelho: #e1261d;
 $VermelhoEscuro: #ae2124;
 $VermelhoClaro: #ff010c;
 $AzulClaro: #00b4da;
-$Cinza: #737b7f;
-$CinzaClaro: #dadadc;
+$Cinza: #a3a3a3;
+$CinzaClaro: #ebebeb;
+$CinzaBG: #f7f7f7;
 
 /*=========================COMUNS=================================*/
 .clear {
@@ -84,14 +90,29 @@ $CinzaClaro: #dadadc;
     margin: 0 auto;
 }
 
+.wrap-content {
+    background-color: $Branco;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+    padding: 20px;
+    position: relative;
+    top: 20px;
+}
+
 .hide {
     display: none !important;
 }
-hr{
-    @include model(100%,15px);
+
+hr {
+    @include model(100%, 15px);
     background-color: $CinzaClaro;
     clear: both;
-    margin:40px 0 20px 0;
+    margin: 40px 0 0 0;
+}
+
+b {
+    font-weight: 900 !important;
 }
 
 /*==================================================HEADER=====================================================*/
@@ -102,47 +123,50 @@ hr{
     position: relative;
     z-index: 999;
     background-color: $Branco;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
     transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.2s;
-                        -webkit-transition: ease-in-out 0.2s;
-                        -o-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -webkit-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
 }
+
 .header2 {
     @include model(100%, 60px);
     min-width: 1100px;
     display: block;
-    box-shadow: 1px 1px 5px rgba(0,0,0, 0.3);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     position: fixed;
     z-index: 999;
     background-color: $Branco;
     transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+    -moz-transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s;
+    -o-transition: ease-in-out 0.5s;
 }
 
 .logo {
     @include model(200px, 70px);
     float: left;
     padding: 25px 0 0 20px;
-    img{
+    img {
         height: 70px;
         transition: ease-in-out 0.7s;
-                        -moz-transition: ease-in-out 0.7s;
-                        -webkit-transition: ease-in-out 0.7s;
-                        -o-transition: ease-in-out 0.7s;
+        -moz-transition: ease-in-out 0.7s;
+        -webkit-transition: ease-in-out 0.7s;
+        -o-transition: ease-in-out 0.7s;
     }
 }
+
 .logo2 {
     float: left;
     padding: 5px 0 0 20px;
-
-    img{
+    img {
         height: 50px;
         transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+        -moz-transition: ease-in-out 0.5s;
+        -webkit-transition: ease-in-out 0.5s;
+        -o-transition: ease-in-out 0.5s;
     }
 }
 
@@ -154,9 +178,9 @@ hr{
     padding: 38px 0 0 0;
     margin-right: 15px;
     transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+    -moz-transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s;
+    -o-transition: ease-in-out 0.5s;
     p {
         font-size: 10px;
         text-align: right;
@@ -171,6 +195,7 @@ hr{
         }
     }
 }
+
 .fone-menu2 {
     @include model(130px, 30px);
     float: right;
@@ -180,9 +205,9 @@ hr{
     margin-right: 15px;
     color: $Vermelho;
     transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+    -moz-transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s;
+    -o-transition: ease-in-out 0.5s;
     p {
         font-size: 10px;
         text-align: right;
@@ -200,16 +225,20 @@ hr{
         }
     }
 }
-.active{
-    background-color:$Vermelho;
-    a{color: $Branco;}
+
+.active {
+    background-color: $Vermelho;
+    a {
+        color: $Branco;
+    }
 }
+
 .menu {
     @include model(543px, 120px);
     transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+    -moz-transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s;
+    -o-transition: ease-in-out 0.5s;
     float: right;
     ul {
         position: absolute;
@@ -220,9 +249,9 @@ hr{
         height: 120px;
         line-height: 120px;
         transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+        -moz-transition: ease-in-out 0.5s;
+        -webkit-transition: ease-in-out 0.5s;
+        -o-transition: ease-in-out 0.5s;
         &:hover {
             background-color: $Vermelho;
             transition: ease-in-out 0.3s;
@@ -287,18 +316,19 @@ hr{
         height: 120px;
         display: block;
         transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+        -moz-transition: ease-in-out 0.5s;
+        -webkit-transition: ease-in-out 0.5s;
+        -o-transition: ease-in-out 0.5s;
     }
 }
+
 .menu2 {
     @include model(543px, 60px);
     float: right;
     transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+    -moz-transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s;
+    -o-transition: ease-in-out 0.5s;
     ul {
         position: absolute;
     }
@@ -308,9 +338,9 @@ hr{
         height: 60px;
         line-height: 60px;
         transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+        -moz-transition: ease-in-out 0.5s;
+        -webkit-transition: ease-in-out 0.5s;
+        -o-transition: ease-in-out 0.5s;
         &:hover {
             background-color: $Vermelho;
             transition: ease-in-out 0.3s;
@@ -375,22 +405,25 @@ hr{
         height: 60px;
         display: block;
         transition: ease-in-out 0.5s;
-                        -moz-transition: ease-in-out 0.5s;
-                        -webkit-transition: ease-in-out 0.5s;
-                        -o-transition: ease-in-out 0.5s;
+        -moz-transition: ease-in-out 0.5s;
+        -webkit-transition: ease-in-out 0.5s;
+        -o-transition: ease-in-out 0.5s;
     }
 }
+
 /*============================================ SLIDER =======================================*/
 .slider {
     width: 1100px;
     height: 470px;
     display: block;
     padding-top: 0px;
+    background-color: $Branco;
 }
 
 .banner {
     position: relative;
     overflow: auto;
+    margin-top: 15px;
     li {
         list-style: none;
         width: 1100px;
@@ -403,18 +436,18 @@ hr{
             text-transform: uppercase;
             color: $Branco;
             width: 600px;
-            padding: 50px 0 20px 20px;
+            padding: 50px 0 0px 20px;
             text-shadow: 1px 1px 3px $PretoFosco;
         }
         p {
             font-family: $Avevir;
             font-size: 16px;
             color: $Branco;
-            width: 360px;
+            width: 510px;
             text-shadow: 1px 1px 2px $PretoFosco;
             padding: 0 25px;
             span {
-                font-size: 24px;
+                font-size: 20px;
                 color: $Branco;
                 line-height: 20px;
             }
@@ -429,11 +462,11 @@ hr{
             position: relative;
             top: 10px;
             &:hover {
-            background-color: $VermelhoEscuro;
-            -webkit-transition: background .2s, opacity .2s;
-            -moz-transition: background .2s, opacity .2s;
-            transition: background .2s, opacity .2s;
-        }
+                background-color: $VermelhoEscuro;
+                -webkit-transition: background .2s, opacity .2s;
+                -moz-transition: background .2s, opacity .2s;
+                transition: background .2s, opacity .2s;
+            }
         }
     }
     ul {
@@ -450,11 +483,13 @@ hr{
     bottom: 20px;
     text-align: center;
 }
-.sl-shadow{
-    @include model(1100px,70px);
+
+.sl-shadow {
+    @include model(1100px, 70px);
     display: block;
-    background:url(../images/shadow.png);
+    background: url(../images/shadow.png);
 }
+
 .dots {
     li {
         display: inline-block;
@@ -479,112 +514,127 @@ hr{
 
 /*=====================================PLANOS================================================*/
 .planos {
-    margin-top: 40px;
-    @include model(1100px, 300px);
+    margin-top: 30px;
+    margin-bottom: 40px;
+    @include model(1100px, 230px);
     display: block;
     overflow: hidden;
-    .box-planos1,.box-planos2,.box-planos3,.box-planos4{
-        position:absolute;
+    .box-planos1, .box-planos2, .box-planos3, .box-planos4 {
+        position: absolute;
     }
-    .box-planos1{
-        left:60px;
+    .box-planos1 {
+        left: 50px;
     }
-    .box-planos2{
-        left:340px;
+    .box-planos2 {
+        left: 330px;
     }
-    .box-planos3{
-        left:620px;
+    .box-planos3 {
+        left: 610px;
     }
-    .box-planos4{
-        left:900px;
+    .box-planos4 {
+        left: 890px;
     }
     article {
-       @include model(300px, 250px);
+        @include model(300px, 250px);
         padding-top: 30px;
         text-align: center;
         float: left;
-        margin:0;
-        padding:10px 20px 30px 20px;
-        &:hover{
+        margin: -5px auto;
+        padding: 10px 20px 0px 20px;
+        position: relative;
+        left: -10px;
+        &:hover {
             -webkit-transition: background .5s, opacity .5s;
             -moz-transition: background .5s, opacity .5s;
             transition: background .5s, opacity .5s;
-            p{color:$Branco;}
-            h1{color:$Branco;span{color:$Branco;font-weight:900;}}
-            h2{color:$Branco;}
-            figcaption{color:$Branco;}
         }
+    }
+    a {
+        position: relative;
+        left: -90px;
+        figcaption {
+            font-family: $Avevir;
+            font-size: 16px;
+            text-align: center;
+            line-height: 15px;
+            margin: 5px 0;
+            color: $Vermelho;
+        }
+    }
+    span {
+        font-family: $Avevir;
+        font-size: 22px;
+        position: relative;
     }
     h1 {
         font-family: $Avevir;
-        font-size: 22px;
+        font-size: 26px;
         color: $Vermelho;
         text-align: center;
         font-weight: 100;
         line-height: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
         span {
             color: $PretoFosco;
+            font-family: $Avevir;
+            text-transform: uppercase;
         }
     }
     figure {
         img {
-            max-height: 140px;
-            max-width: 225px;
+            height: 140px;
+            width: 225px;
             overflow: hidden;
-        }
-        figcaption {
-            font-family: $Avevir;
-            font-size: 13px;
-            text-align: left;
-            line-height: 15px;
-            margin: 5px 0;
+            box-shadow: 0px 4px 2px $CinzaClaro;
         }
     }
 }
-.thumb-hover{
-    position:relative;
-    top: -80px;
-    left:0px;
+
+.thumb-hover {
+    position: relative;
+    top: -100px;
+    left: 10px;
     color: $Branco;
     height: 240px;
     width: 280px;
     display: block;
     line-height: 140px;
-    background: rgba(0,0,0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     font-family: $Avevir;
     font-size: 30px;
     z-index: 50;
     margin-top: -140px;
-    background-color:$Vermelho;
+    background-color: $Vermelho;
     box-shadow: 1px 5px 10px $Cinza;
     opacity: 0;
-    h2{
+    h2 {
         font-size: 28px;
         text-transform: uppercase;
         text-align: center;
-        padding:50px 10px 10px 10px;
+        padding: 50px 10px 10px 10px;
         color: $Branco;
     }
-    p{
+    p {
         font-size: 14px;
         text-align: left;
-        padding:0px 10px 10px 10px;
+        padding: 0px 10px 10px 10px;
         line-height: 16px;
         color: $Branco;
     }
-    &:hover{
+    &:hover {
         -webkit-transition: background .5s, opacity .5s;
         -moz-transition: background .5s, opacity .5s;
         transition: background .5s, opacity .5s;
-                opacity: 1;
+        opacity: 1;
     }
 }
+
 /*=====================================LISTAS================================================*/
-.lista{
-	padding-top:40px;
-	 h1{
-	 	font-family: $Avevir;
+.lista {
+    padding-top: 40px;
+    h1 {
+        font-family: $Avevir;
         font-size: 52px;
         color: $Vermelho;
         text-align: left;
@@ -592,614 +642,899 @@ hr{
         line-height: 20px;
         margin-bottom: 20px;
         text-transform: uppercase;
-	 }
-	 .texto{
-	 	@include model(700px, 78px);
-	 	float: left;
-	 	p{font-family: $Avevir;}
-	 }
-	 .icon_car{
-	 	float: right;
-	 	li{display:inline-block;}
-   	 	.icon_carro{
-   	 		background:url(../images/sprite-carros.png) 0 0px no-repeat;
-   	 		width: 114px;
-			height: 40px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-   	 	.icon_house{
-   	 		background:url(../images/sprite-carros.png) 0 -47px no-repeat;
-   	 		width: 64px;
-			height: 47px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-   	 	.icon_bike{
-   	 		background:url(../images/sprite-carros.png) 0 -107px no-repeat;
-   	 		width: 74px;
-			height: 47px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-   	 	.icon_van{
-   	 		background:url(../images/sprite-carros.png) 0 -167px no-repeat;
-   	 		width: 114px;
-			height: 47px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-	 }
+    }
+    .texto {
+        @include model(700px, 78px);
+        float: left;
+        p {
+            font-family: $Avevir;
+            font-size: 14px;
+            max-height: 65px;
+            overflow: hidden;
+        }
+    }
+    .icon_car {
+        float: right;
+        li {
+            display: inline-block;
+        }
+        .icon_carro {
+            background: url(../images/sprite-carros.png) 0 0px no-repeat;
+            width: 114px;
+            height: 40px;
+            display: block;
+            -webkit-transition: background 1s, opacity 1s;
+            -moz-transition: background 1s, opacity 1s;
+            transition: background 1s, opacity 1s;
+            position: relative;
+            top: 0;
+            &:hover {
+                top: -5px;
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+                -webkit-transition: background 1s, opacity 1s;
+                -moz-transition: background 1s, opacity 1s;
+                transition: background 1s, opacity 1s;
+            }
+        }
+        .icon_house {
+            background: url(../images/sprite-carros.png) 0 -47px no-repeat;
+            width: 64px;
+            height: 47px;
+            display: block;
+            -webkit-transition: background 1s, opacity 1s;
+            -moz-transition: background 1s, opacity 1s;
+            transition: background 1s, opacity 1s;
+            position: relative;
+            top: 0;
+            &:hover {
+                top: -5px;
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+                -webkit-transition: background 1s, opacity 1s;
+                -moz-transition: background 1s, opacity 1s;
+                transition: background 1s, opacity 1s;
+            }
+        }
+        .icon_bike {
+            background: url(../images/sprite-carros.png) 0 -107px no-repeat;
+            width: 74px;
+            height: 47px;
+            display: block;
+            -webkit-transition: background 1s, opacity 1s;
+            -moz-transition: background 1s, opacity 1s;
+            transition: background 1s, opacity 1s;
+            position: relative;
+            top: 0;
+            &:hover {
+                top: -5px;
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+                -webkit-transition: background 1s, opacity 1s;
+                -moz-transition: background 1s, opacity 1s;
+                transition: background 1s, opacity 1s;
+            }
+        }
+        .icon_van {
+            background: url(../images/sprite-carros.png) 0 -167px no-repeat;
+            width: 114px;
+            height: 47px;
+            display: block;
+            -webkit-transition: background 1s, opacity 1s;
+            -moz-transition: background 1s, opacity 1s;
+            transition: background 1s, opacity 1s;
+            position: relative;
+            top: 0;
+            &:hover {
+                top: -5px;
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+                -webkit-transition: background 1s, opacity 1s;
+                -moz-transition: background 1s, opacity 1s;
+                transition: background 1s, opacity 1s;
+            }
+        }
+    }
 }
+
 .tabelaplanos {
-	margin:0px;padding:0px;
-	width:100%;
-}.tabelaplanos table{
-    border-collapse: collapse;
-     border-spacing: 0;
-	width:100%;
-	height:100%;
-	margin:0px;padding:0px;
-}
-.tabelaplanos tr:nth-child(odd){ background-color:#ebebeb; }
-.tabelaplanos tr:nth-child(even)    { background-color:#ffffff; }.tabelaplanos td{
-	vertical-align:middle;
-	text-align:center;
-	padding:7px;
-	font-size:17px;
-	font-family:$Avevir;
-	color:$Cinza;
-}.tabelaplanos tr:last-child td{
-	border-width:0px 1px 0px 0px;
-}.tabelaplanos tr td:last-child{
-	border-width:0px 0px 1px 0px;
-}.tabelaplanos tr:last-child td:last-child{
-	border-width:0px 0px 0px 0px;
-}
-.tabelaplanos tr:first-child td{
-		background:-o-linear-gradient(bottom, #e2261d 5%, #e2261d 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e2261d), color-stop(1, #e2261d) );
-	background:-moz-linear-gradient( center top, #e2261d 5%, #e2261d 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2261d", endColorstr="#e2261d");	background: -o-linear-gradient(top,#e2261d,e2261d);
-	background-color:#e2261d;
-	text-align:center;
-	border-width:0px 0px 1px 1px;
-	font-size:17px;
-	font-family:$Avevir;
-	font-weight:bold;
-	color:#ffffff;
-}
-.tabelaplanos tr:first-child:hover td{
-	background:-o-linear-gradient(bottom, #e2261d 5%, #e2261d 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e2261d), color-stop(1, #e2261d) );
-	background:-moz-linear-gradient( center top, #e2261d 5%, #e2261d 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2261d", endColorstr="#e2261d");	background: -o-linear-gradient(top,#e2261d,e2261d);
-
-	background-color:#e2261d;
-}
-.tabelaplanos tr:first-child td:first-child{
-	border-width:0px 0px 1px 0px;
-}
-.tabelaplanos tr:first-child td:last-child{
-	border-width:0px 0px 1px 1px;
-}
-.comprar{
-	@include model(148px, 35px);
-	background: $Vermelho;
-	display: block;
-	margin: 0px auto;
-	color: $Branco;
-	padding-top: 5px;
-	font-size: 25px;
-	border-bottom: solid 5px $VermelhoEscuro;
-	text-transform:uppercase;
-	&:hover{
-		border-bottom: solid 5px $Vermelho;
-	}
-	&:active{
-		position: relative;
-		top: 2px;
-	}
-}
-/*=====================================DETALHES================================================*/
-.detalhes{
-	.voltar{
-		color:$VermelhoClaro;
-		font-family: $Avevir;
-		font-weight:bold;
-	}
-	.detalhes_con{
-		margin-top: 20px;
-	}
-	ul{
-		@include model(516px, 126px);
-		margin-top: 50px;
-	}
-	p{
-		font-family: $Avevir;
-		margin-top: 20px;
-	}
-	.p_ri{
-		text-transform: uppercase;
-		color: $VermelhoClaro;
-		float: left;
-		margin: 0px;
-	}
-	.p_le{
-		float: right;
-		margin: 0px;
-	}
-	h1{
-		font-family: $Avevir;
-		font-size: 35px;
-		color: $Cinza;
-		margin-top: 35px;
-	}
-	h2{
-		font-family: $Avevir;
-		text-transform: uppercase;
-		color: $Vermelho;
-		font-size: 16px;
-	}
-	.details_final{
-		@include model(826px, 62px);
-		margin: 0px auto;
-		li{
-			display:inline-block;
-			.comprar{
-				@include model(130px, 20px);
-				position: relative;
-				bottom: 18px;
-				left: 10px;	
-			}
-			a{font-size: 15px;text-align: center; text-transform: none; font-family: $Avevir;}
-		}
-	}
-	.compartilhe{
-		@include model(260px, 48px);
-		margin-top: 0px;
-		li{
-			display:inline-block;
-			margin-left: 5px;
-			&:first-chil{margin-left:0px;}
-		}
-		p{font-size: 20px;}
-		.icon_plus{
-   	 		background:url(../images/sprite-comp.png) 0 0px no-repeat;
-   	 		width: 22px;
-			height: 19px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-   	 	.icon_face{
-   	 		background:url(../images/sprite-comp.png) -33px 0px no-repeat;
-   	 		width: 22px;
-			height: 19px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-   	 	.icon_t{
-   	 		background:url(../images/sprite-comp.png) -60px 0px no-repeat;
-   	 		width: 22px;
-			height: 19px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-		.icon_mail{
-   	 		background:url(../images/sprite-comp.png) -94px 0px no-repeat;
-   	 		width: 22px;
-			height: 19px;
-			display: block;
-			&:hover{
-				opacity:0.65;
-				-moz-opacity: 0.65;
-				filter: alpha(opacity=65);
-			}
-   	 	}
-	} 
-}
-/*====================================== COMPRA ===================================*/
-.compra{
-	padding-top:20px;
-	h1{
-		font-family: $Avevir;
-		font-size: 35px;
-		color: $Vermelho;
-		margin-top: 35px;
-	}
-	h2{
-		text-align: center;
-		color: $CinzaClaro;
-		text-transform: uppercase;
-		font-family: $Avevir;
-		font-size: 30px;
-		margin-top: 30px;
-	}
-	hr{
-		height: 1px;
-		margin: 0px 0 10px 0;
-	}
-	p{
-		font-family: $Avevir;
-		font-size: 14px;
-	}
-	.links_form{
-		text-align: center;
-		margin-top:60px;
-		li{
-			display:inline-block;
-			margin-left: 25px;
-		}
-		a{
-			font-family: $Avevir;
-			font-size: 14px;
-			text-transform: uppercase;
-		}
-		.ativo{color:$Vermelho;}
-	}
-	form {
-	    margin:0 auto 15%;
-		margin-bottom: 15px;
-		width: 540px;
-		float: left;
-	}
-	label{font-family: $Avevir;}
-	input, textarea, select {
-	    width:429px;
-	    height:32px;
-	    border:1px solid #dedede;
-	    padding:4px;
-	    margin-top:3px;
-	    font-size:0.9em;
-	    color:#3a3a3a;
-	    margin-bottom: 15px;
-	}
-	input[type="radio"] {
-		width:15px;
-	    height:15px;
-	    margin-left: 5px;
-	}
-	input[type="checkbox"]{
-		height: 10px;
-		width: 10px;
-	}
-	.valores{
-		@include model(369px, 316px);
-		float: right;
-		margin-top: 210px;
-		h3{
-			color: $CinzaClaro; 
-			font-family: $Avevir;
-			font-size: 24px; 
-			text-transform: uppercase;
-			b{color:$VermelhoClaro;padding-left: 30px;} 
-		}
-		h2{
-			text-align: left;
-		}
-		h1{
-			margin: 0px;
-			font-size: 60px;
-		}
-	}
-
-}
-/*====================================== PERGUNTAS ===================================*/
-.perguntas{
-	padding-top:20px;
-	h1{
-		font-family: $Avevir;
-		font-size: 35px;
-		color: $Vermelho;
-		margin-top: 35px;
-	}
-	#accordion section, #accordion .pointer, #accordion h1, #accordion p {
-	  -webkit-transition: all 0.5s ease-in-out;
-	  -moz-transition: all 0.5s ease-in-out;
-	  -ms-transition: all 0.5s ease-in-out;
-	  transition: all 0.5s ease-in-out;
-	}
-	#accordion {
-	  margin-bottom:30px;
-	}
-	#accordion h1 {
-	  line-height:1.2;
-	  font-size:20px;
-	  background-color:$Vermelho;
-	  margin:0;
-	  padding: 0px 10px 10px 30px;
-	  border-radius: 10px;
-	}
-	
-	#accordion h1 a {
-	  color:$Branco;
-	  font-family: $Avevir;
-	}
-	#accordion section {
-	  overflow:hidden;
-	  height:220px;
-	}
-	#accordion p {
-	  padding:0 10px;
-	  color:$Cinza;
-	  font-family: $Avevir;
-	  font-size: 18px;
-	}
-	#accordion section.ac_hidden p:not(.pointer) {
-	  color:#fff;
-	}
-	
-	#accordion section.ac_hidden {
-	  height:70px;
-	}
-	#accordion .pointer {
-	  padding:0;
-	  margin:10px 0 0 6px;
-	  line-height:20px;
-	  width:13px;
-	  position:absolute;
-	}
-	#accordion section:not(.ac_hidden) h1 {
-	  background-color:$VermelhoClaro;
-	}
-	
-	#accordion section:not(.ac_hidden) .pointer {
-	  display:block;
-	  -webkit-transform:rotate(90deg);
-	  -moz-transform:rotate(90deg);
-	  -o-transform:rotate(90deg);
-	  transform:rotate(90deg);
-	  padding:0;
-	}
-}
-/*====================================== CONSORCIO ===================================*/
-.consorcio{
-	padding-top:20px;
-	h1{
-		font-family: $Avevir;
-		font-size: 35px;
-		color: $Vermelho;
-		margin-top: 35px;
-	}
-	h2, p{
-		font-family: $Avevir;
-	}
-}
-/*====================================== CONTATO ===================================*/
-.contato{
-	padding-top:20px;
-	h1{
-		font-family: $Avevir;
-		font-size: 35px;
-		color: $Vermelho;
-		margin-top: 35px;
-	}
-	/*Form*/
-	label {
-	    display:block;
-	    margin-top:20px;
-	    letter-spacing:2px;
-		color:#000000;
-		font-family: $Avevir;
-	}
-	form {
-	    margin:0 auto 15%;
-		margin-bottom: 15px;
-		width: 500px;
-	}
-	
-	/* Style the text boxes */
-	textarea {
-		height:213px !important;
-		background:#efefef;
-	}
-	input, textarea {
-	    width:100%;
-	    height:32px;
-	    background:#efefef;
-	    border:1px solid #dedede;
-	    padding:4px;
-	    margin-top:3px;
-	    font-size:0.9em;
-	    color:#3a3a3a;
-	    -moz-border-radius:5px;
-	    -webkit-border-radius:5px;
-	    border-radius:5px;
-	}
-	input:focus, textarea:focus {
-	    border:1px solid #97d6eb;
-	}
-	#submit {
-	    width: auto;  
-	    padding: 9px 15px;  
-	    background: #ff1621;  
-	    border: 0;  
-	    font-size: 14px;  
-	    color: #FFFFFF;  
-	    -webkit-border-radius: 5px;  
-	    -moz-border-radius: 5px;  
-	}
-	#submit:hover {
-		opacity:.9;
-	}
-}
-/*====================================== RODAPE ===================================*/
-footer{
+    margin: 0px;
+    padding: 0px;
     width: 100%;
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.86) 62%, rgba(234,232,232,0.78) 100%, rgba(234,232,232,1) 101%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(62%,rgba(255,255,255,0.86)), color-stop(100%,rgba(234,232,232,0.78)), color-stop(101%,rgba(234,232,232,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.86) 62%,rgba(234,232,232,0.78) 100%,rgba(234,232,232,1) 101%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eae8e8',GradientType=0 ); /* IE6-9 */
-
 }
-.rodape{
- section{
+
+.tabelaplanos table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tabelaplanos tr:nth-child(odd) {
+    background-color: #ebebeb;
+}
+
+.tabelaplanos tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.tabelaplanos td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 7px;
+    font-size: 17px;
+    font-family: $Avevir;
+    color: $Cinza;
+}
+
+.tabelaplanos tr:last-child td {
+    border-width: 0px 1px 0px 0px;
+}
+
+.tabelaplanos tr td:last-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+.tabelaplanos tr:last-child td:last-child {
+    border-width: 0px 0px 0px 0px;
+}
+
+.tabelaplanos tr:first-child td {
+    background: -o-linear-gradient(bottom, #e2261d 5%, #e2261d 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e2261d), color-stop(1, #e2261d));
+    background: -moz-linear-gradient(center top, #e2261d 5%, #e2261d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2261d", endColorstr="#e2261d");
+    background: -o-linear-gradient(top, #e2261d, e2261d);
+    background-color: #e2261d;
+    text-align: center;
+    border-width: 0px 0px 1px 1px;
+    font-size: 17px;
+    font-family: $Avevir;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.tabelaplanos tr:first-child:hover td {
+    background: -o-linear-gradient(bottom, #e2261d 5%, #e2261d 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e2261d), color-stop(1, #e2261d));
+    background: -moz-linear-gradient(center top, #e2261d 5%, #e2261d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e2261d", endColorstr="#e2261d");
+    background: -o-linear-gradient(top, #e2261d, e2261d);
+    background-color: #e2261d;
+}
+
+.tabelaplanos tr:first-child td:first-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+.tabelaplanos tr:first-child td:last-child {
+    border-width: 0px 0px 1px 1px;
+}
+
+.comprar {
+    background: none repeat scroll 0 0 #e1261d;
+    border-bottom: 4px solid #ae2124;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: 100;
+    height: 25px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 5px;
+    text-transform: uppercase;
+    width: 120px;
+    position: relative;
+    &:hover {
+        border-bottom: solid 4px $Vermelho;
+        top: 1px;
+    }
+    &:active {
+        top: 2px;
+    }
+}
+
+#identificacao, #endereco, #seguro, #resumo {
+    width: 650px;
+    display: block;
+}
+
+.modelForm {
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    input[type='radio'] {
+        margin-left: 15px !important;
+    }
+}
+
+.btn-avancar {
+    background: none repeat scroll 0 0 #e1261d;
+    border-bottom: 4px solid #ae2124;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: 100;
+    height: 25px;
+    overflow: hidden;
+    margin: 0 85px auto;
+    padding-top: 5px;
+    text-transform: uppercase;
+    width: 120px;
+    position: relative;
+    text-align: center;
+    float: right;
+    clear: both;
+    &:hover {
+        border-bottom: solid 4px $Vermelho;
+        top: 1px;
+    }
+    &:active {
+        top: 2px;
+    }
+}
+.btn-enviar {
+    background: none repeat scroll 0 0 $Vermelho;
+    border: $Vermelho !important;
+    border-bottom: 4px solid $VermelhoEscuro !important;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: 100;
+    height: 25px;
+    overflow: hidden;
+    margin: 0 85px auto;
+    padding-top: 5px;
+    text-transform: uppercase;
+    width: 120px;
+    position: relative;
+    text-align: center;
+    float: right;
+    clear: both;
+    &:hover {
+        border-bottom: solid 4px $Vermelho !important;
+        top: 1px;
+        cursor: pointer !important;
+    }
+    &:active {
+        top: 2px;
+    }
+}
+
+/*=====================================DETALHES================================================*/
+.detalhes {
+    position: relative;
+    top: 20px;
+    .voltar {
+        color: $VermelhoClaro;
+        font-family: $Avevir;
+        font-weight: bold;
+    }
+    .detalhes_con {
+        margin-top: 20px;
+    }
+    .info-det {
+        @include model(516px, 126px);
+        margin-top: 50px;
+        float: left;
+    }
+    .info-img {
+        float: right;
+        position: relative;
+        right: 50px;
+        margin-top: -35px;
+        max-height: 270px;
+        overflow: hidden;
+        img {
+            position: relative;
+            top: 10px;
+            width: 450px;
+        }
+    }
+    p {
+        font-family: $Avevir;
+        margin-top: 20px;
+    }
+    strong {
+        font-family: $Avevir;
+        font-size: 20px;
+    }
+    .p_ri {
+        text-transform: uppercase;
+        color: $VermelhoClaro;
+        float: left;
+        margin: 0px;
+    }
+    .p_le {
+        float: right;
+        margin: 0px;
+    }
+    h1 {
+        font-family: $Avevir;
+        font-size: 35px;
+        color: $Cinza;
+        margin-top: 35px;
+    }
+    h2 {
+        font-family: $Avevir;
+        text-transform: uppercase;
+        color: $Vermelho;
+        font-size: 16px;
+    }
+    .details_final {
+        @include model(100%, 162px);
+        margin: 0px auto;
+        margin-bottom: 10px;
+        text-align: center;
+        li {
+            display: block;
+            padding-bottom: 30px;
+            .btn-pagar {
+                background: none repeat scroll 0 0 #e1261d;
+                border-bottom: 4px solid #ae2124;
+                color: #fff;
+                display: block;
+                font-size: 15px;
+                font-weight: 100;
+                height: 25px;
+                overflow: hidden;
+                margin: 0 auto;
+                padding-top: 5px;
+                text-transform: uppercase;
+                width: 440px;
+                position: relative;
+                top: -13px;
+                &:hover {
+                    border-bottom: solid 4px $Vermelho;
+                    top: -12px;
+                }
+                &:active {
+                    top: -11px;
+                }
+            }
+            a {
+                font-size: 15px;
+                text-align: center;
+                text-transform: none;
+                font-family: $Avevir;
+            }
+        }
+    }
+    .compartilhe {
+        @include model(260px, 48px);
+        margin-top: 0px;
+        li {
+            display: inline-block;
+            margin-left: 5px;
+            &:first-chil {
+                margin-left: 0px;
+            }
+        }
+        p {
+            font-size: 20px;
+        }
+        .icon_plus {
+            background: url(../images/sprite-comp.png) 0 0px no-repeat;
+            width: 22px;
+            height: 19px;
+            display: block;
+            &:hover {
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+            }
+        }
+        .icon_face {
+            background: url(../images/sprite-comp.png) -33px 0px no-repeat;
+            width: 22px;
+            height: 19px;
+            display: block;
+            &:hover {
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+            }
+        }
+        .icon_t {
+            background: url(../images/sprite-comp.png) -60px 0px no-repeat;
+            width: 22px;
+            height: 19px;
+            display: block;
+            &:hover {
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+            }
+        }
+        .icon_mail {
+            background: url(../images/sprite-comp.png) -94px 0px no-repeat;
+            width: 22px;
+            height: 19px;
+            display: block;
+            &:hover {
+                opacity: 0.65;
+                -moz-opacity: 0.65;
+                filter: alpha(opacity = 65);
+            }
+        }
+    }
+}
+
+/*====================================== COMPRA ===================================*/
+.compra {
+    padding-top: 20px;
+    h1 {
+        font-family: $Avevir;
+        font-size: 35px;
+        color: $Vermelho;
+        margin-top: 35px;
+    }
+    .al-h2C {
+        position: relative;
+        left: -50px;
+    }
+    h2 {
+        text-align: center;
+        color: $Cinza;
+        text-transform: uppercase;
+        font-family: $Avevir;
+        font-size: 30px;
+        margin-top: 30px;
+        padding-left: 0px;
+    }
+    hr {
+        height: 1px;
+        margin: 0px 0 10px 0;
+    }
+    p {
+        font-family: $Avevir;
+        font-size: 14px;
+    }
+    .links_form {
+        text-align: center;
+        margin-top: 60px;
+        li {
+            display: inline-block;
+            margin-left: 25px;
+        }
+        a {
+            font-family: $Avevir;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .ativo {
+            color: $Vermelho;
+        }
+    }
+    form {
+        margin: 0 auto 15%;
+        margin-bottom: 15px;
+        width: 650px;
+        float: left;
+        font-family: $Avevir;
+    }
+    label {
+        font-family: $Avevir;
+    }
+    input, textarea, select {
+        width: 429px;
+        height: 32px;
+        border: 1px solid #dedede;
+        border-radius: 0 !important;
+        padding: 4px;
+        margin-top: 15px;
+        margin-left: 5px;
+        font-size: 0.9em;
+        color: #3a3a3a;
+        margin-bottom: 15px;
+    }
+    input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-left: 50px;
+        margin-right: 5px;
+    }
+    input[type="checkbox"] {
+        height: 10px;
+        width: 10px;
+    }
+    .seg {
+        border-top: 1px dotted $Cinza;
+        padding: 15px;
+        text-align: justify;
+        font-size: 16px;
+        p {
+            font-size: 12px;
+            color: $Cinza;
+            margin: 10px 0 20px 0;
+            text-indent: 20px;
+        }
+        label {
+            color: $Vermelho;
+        }
+    }
+    .valores {
+        @include model(369px, 316px);
+        float: right;
+        margin-top: 190px;
+        margin-right: 60px;
+        h3 {
+            color: $Cinza;
+            font-family: $Avevir;
+            font-size: 24px;
+            text-transform: uppercase;
+            b {
+                color: $VermelhoClaro;
+                padding-left: 30px;
+            }
+        }
+        h2 {
+            text-align: left;
+            color: $Cinza;
+        }
+        h1 {
+            margin: 0px;
+            font-size: 60px;
+        }
+    }
+}
+
+/*====================================== PERGUNTAS ===================================*/
+.perguntas {
+    padding-top: 20px;
+    h1 {
+        font-family: $Avevir;
+        font-size: 52px;
+        font-weight: 100;
+        color: $Vermelho;
+        margin: 25px 0;
+        text-transform: uppercase;
+    }
+    #accordion section, #accordion .pointer, #accordion h1, #accordion p {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    #accordion {
+        margin-bottom: 30px;
+    }
+    #accordion h1 {
+        line-height: 1.2;
+        font-size: 20px;
+        font-weight: 100;
+        margin: 0;
+        padding: 0px 10px 10px 30px;
+        border-radius: 10px;
+        text-transform: lowercase;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+    #accordion h1 a, b {
+        width: 100%;
+        color: $Vermelho;
+        font-family: $Avevir;
+        font-size: 18px;
+        border-bottom: 1px dotted $CinzaClaro;
+    }
+    #accordion section {
+        overflow: hidden;
+        height: 220px;
+    }
+    #accordion p {
+        padding: 0 10px;
+        color: $Cinza;
+        font-family: $Avevir;
+        font-size: 16px;
+    }
+    #accordion section.ac_hidden p:not(.pointer) {
+        color: #fff;
+    }
+    #accordion section.ac_hidden {
+        height: 70px;
+    }
+    #accordion .pointer {
+        padding: 0;
+        margin: 4px 0 0 6px;
+        line-height: 20px;
+        width: 13px;
+        position: absolute;
+    }
+    #accordion section:not(.ac_hidden) h1 {
+        background-color: $Branco;
+    }
+    #accordion section:not(.ac_hidden) .pointer {
+        display: block;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        padding: 0;
+    }
+}
+
+/*====================================== CONSORCIO ===================================*/
+.consorcio {
+    padding-top: 20px;
+    h1 {
+        font-family: $Avevir;
+        font-size: 52px;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: $Vermelho;
+        margin-top: 35px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-family: $Avevir;
+        margin-top: 30px;
+    }
+    p {
+        font-family: $Avevir;
+        font-size: 15px;
+        font-weight: 100;
+        color: $PretoFosco;
+        text-indent: 30px;
+        &:first-letter {
+            font-size: 20px;
+        }
+    }
+}
+
+/*====================================== CONTATO ===================================*/
+.contato {
+    padding-top: 20px;
+    h1 {
+        font-family: $Avevir;
+        font-size: 52px;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: $Vermelho;
+        margin-top: 35px;
+        text-transform: uppercase;
+    }
+    p {
+        font-family: $Open;
+        color: $Cinza;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    /*Form*/
+    label {
+        display: block;
+        margin-top: 20px;
+        letter-spacing: 2px;
+        color: $Vermelho;
+        font-family: $Avevir;
+    }
+    form {
+        margin: 0 auto 15%;
+        margin-bottom: 15px;
+        width: 500px;
+    }
+    /* Style the text boxes */
+    textarea {
+        height: 213px !important;
+        background: #efefef;
+    }
+    input, textarea {
+        width: 100%;
+        height: 32px;
+        background: #efefef;
+        border: 1px solid #dedede;
+        padding: 4px;
+        margin-top: 3px;
+        font-size: 0.9em;
+        color: #3a3a3a;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+    input, textarea {
+        font-family: $Open, arial;
+    }
+    input:focus, textarea:focus {
+        border: 1px solid #97d6eb;
+    }
+    #submit {
+        width: auto;
+        padding: 0px 15px;
+        height: 35px;
+        line-height: 35px;
+        background: #ff1621;
+        border: 0;
+        font-size: 14px;
+        color: #FFFFFF;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        cursor: pointer;
+    }
+    #submit:hover {
+        opacity: .9;
+    }
+}
+
+/*====================================== RODAPE ===================================*/
+footer {
+    width: 100%;
+    padding-top: 20px;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.86) 62%, rgba(234, 232, 232, 0.78) 100%, rgba(234, 232, 232, 1) 101%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(62%, rgba(255, 255, 255, 0.86)), color-stop(100%, rgba(234, 232, 232, 0.78)), color-stop(101%, rgba(234, 232, 232, 1)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.86) 62%, rgba(234, 232, 232, 0.78) 100%, rgba(234, 232, 232, 1) 101%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.86) 62%, rgba(234, 232, 232, 0.78) 100%, rgba(234, 232, 232, 1) 101%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.86) 62%, rgba(234, 232, 232, 0.78) 100%, rgba(234, 232, 232, 1) 101%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.86) 62%, rgba(234, 232, 232, 0.78) 100%, rgba(234, 232, 232, 1) 101%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eae8e8',GradientType=0 );
+    /* IE6-9 */
+}
+
+.rodape {
+    section {
         width: 240px;
         float: left;
         font-size: 12px;
         font-family: $Avevir;
         overflow: hidden;
-        margin:0 10px;
-        h2{
+        margin: 0 10px;
+        h2 {
             text-transform: uppercase;
             font-weight: 100;
             margin-bottom: 25px;
         }
-        h3{
+        h3 {
             font-size: 30px;
             font-weight: 100;
             color: $Vermelho;
-            span{
+            span {
                 font-size: 13px;
                 color: $Vermelho;
-                position:relative;
+                position: relative;
                 top: -2px;
                 margin-right: 5px;
             }
         }
-        figcaption{
+        figcaption {
             color: $Vermelho;
-            margin:15px 0;
+            margin: 15px 0;
             width: 240px;
-            a{
+            a {
                 font-weight: 900;
                 float: right;
                 margin-top: 5px;
                 margin-right: 5px;
-                &:hover{
-                    position:relative;
+                &:hover {
+                    position: relative;
                     left: 2px;
                 }
             }
         }
-        ul{
-            li{
+        ul {
+            li {
                 display: block;
                 width: 100%;
-                border-bottom:1px solid $CinzaClaro;
+                border-bottom: 1px solid $CinzaClaro;
                 line-height: 26px;
                 height: 26px;
-                &::before{
-                    content: "»";
+                span {
                     color: $Vermelho;
                     margin-right: 5px;
                 }
-                &:hover{
-                    position:relative;
+                &:hover {
+                    position: relative;
                     left: 2px;
                 }
-                a{
-                    &:hover{color: $Vermelho;}
+                a {
+                    &:hover {
+                        color: $Vermelho;
+                    }
                 }
             }
         }
-        input[type="text"]{
+        input[type="text"] {
             border: 1px solid $CinzaClaro;
             height: 30px;
             width: 220px;
             line-height: 30px;
-            text-indent: 15px; 
+            text-indent: 15px;
         }
-        p{
+        p {
             margin: 10px 0 0 0;
-            a{font-size:13px;color:$Vermelho;position:relative;top:-5px;}
+            a {
+                font-size: 13px;
+                color: $Vermelho;
+                position: relative;
+                top: -5px;
+            }
         }
     }
 }
-.footer-h2{
-        position:relative;
-        top:25px;
+
+.footer-h2 {
+    position: relative;
+    top: 25px;
+}
+
+.alert-ok {
+    color: #39a100;
+    &::before {
+        content: "'&radic;'";
     }
-    .alert-ok{
-        color: #39a100;
-        &::before{
-            content:"'&radic;'";
-        }
+}
+
+.alert-erro {
+    color: #b30d1c;
+    &::before {
+        content: "&times;";
+        font-weight: 900;
     }
-    .alert-erro{
-        color: #b30d1c;
-        &::before{
-            content:"&times;";
-            font-weight: 900;
-        }
+}
+
+.social-fb, .social-tw, .social-gp, .social-in {
+    @include model(27px, 27px);
+    display: block;
+    float: left;
+    margin-right: 15px;
+}
+
+.social-fb {
+    background: url(../images/sprite-social.png) 0 -27px no-repeat;
+    &:hover {
+        background: url(../images/sprite-social.png) 0 0 no-repeat;
+        -webkit-transition: background .2s, opacity .2s;
+        -moz-transition: background .2s, opacity .2s;
+        transition: background .2s, opacity .2s;
     }
-    .social-fb,.social-tw,.social-gp,.social-in{
-        @include model(27px,27px);
-        display: block;
-        float: left;
-        margin-right: 15px;
+}
+
+.social-tw {
+    background: url(../images/sprite-social.png) -35px -27px no-repeat;
+    &:hover {
+        background: url(../images/sprite-social.png) -35px 0 no-repeat;
+        -webkit-transition: background .2s, opacity .2s;
+        -moz-transition: background .2s, opacity .2s;
+        transition: background .2s, opacity .2s;
     }
-    .social-fb{
-        background:url(../images/sprite-social.png) 0 -27px no-repeat;
-        &:hover{
-            background:url(../images/sprite-social.png) 0 0 no-repeat;
-            -webkit-transition: background .2s, opacity .2s;
-            -moz-transition: background .2s, opacity .2s;
-            transition: background .2s, opacity .2s;
-        }
+}
+
+.social-gp {
+    background: url(../images/sprite-social.png) -70px -27px no-repeat;
+    &:hover {
+        background: url(../images/sprite-social.png) -70px 0 no-repeat;
+        -webkit-transition: background .2s, opacity .2s;
+        -moz-transition: background .2s, opacity .2s;
+        transition: background .2s, opacity .2s;
     }
-    .social-tw{
-        background:url(../images/sprite-social.png) -35px -27px no-repeat;
-        &:hover{
-            background:url(../images/sprite-social.png) -35px 0 no-repeat;
-            -webkit-transition: background .2s, opacity .2s;
-            -moz-transition: background .2s, opacity .2s;
-            transition: background .2s, opacity .2s;
-        }
+}
+
+.social-in {
+    background: url(../images/sprite-social.png) -107px -27px no-repeat;
+    &:hover {
+        background: url(../images/sprite-social.png) -107px 0 no-repeat;
+        -webkit-transition: background .2s, opacity .2s;
+        -moz-transition: background .2s, opacity .2s;
+        transition: background .2s, opacity .2s;
     }
-    .social-gp{
-        background:url(../images/sprite-social.png) -70px -27px no-repeat;
-        &:hover{
-            background:url(../images/sprite-social.png) -70px 0 no-repeat;
-            -webkit-transition: background .2s, opacity .2s;
-            -moz-transition: background .2s, opacity .2s;
-            transition: background .2s, opacity .2s;
-        }
-    }
-    .social-in{
-        background:url(../images/sprite-social.png) -107px -27px no-repeat;
-        &:hover{
-            background:url(../images/sprite-social.png) -107px 0 no-repeat;
-            -webkit-transition: background .2s, opacity .2s;
-            -moz-transition: background .2s, opacity .2s;
-            transition: background .2s, opacity .2s;
-        }
-    }
-.copy{
-    @include model(100%,37px);
+}
+
+.copy {
+    @include model(100%, 37px);
     border-top: 3px solid $CinzaClaro;
-    padding:20px 0;
+    padding: 20px 0;
     margin-top: 15px;
-    p{
+    p {
         font-family: $Avevir;
         font-size: 13px;
         text-align: left;
@@ -1208,7 +1543,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
         width: 600px;
         float: left;
     }
-    figure{
+    figure {
         float: right;
     }
 }

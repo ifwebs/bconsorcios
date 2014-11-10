@@ -37,14 +37,15 @@
 
 #rescrita
 RewriteEngine on
-#RewriteBase /
-RewriteCond %{HTTP_HOST} www.guiadacopaplug.com.br [NC]
-RewriteRule ^(.*)$ http://guiadacopaplug.com.br/$1 [L,R=301]
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^bconsorcios.com.br [NC]
+RewriteRule ^(.*)$ http://www.bconsorcios.com.br/$1 [L,R=301]
+
 
 DirectoryIndex index.php
  
 #Not Found
-ErrorDocument 404 http://localhost/phpworkspace/bconsorcios/404
+ErrorDocument 404 http://www.bconsorcios.com.br/404
 
 Order deny,allow
 Options All -Indexes
@@ -56,7 +57,7 @@ RewriteRule ^404$ 404.php
 RewriteRule ^.$ index.php
 RewriteRule ^index$ index.php
 RewriteRule ^categoria/(.+)-(.+)$ categoria.php?id=$1&slug=$2
-RewriteRule ^detalhes/(.+)$ detalhes.php?id=$1
+RewriteRule ^detalhes/(.+)$ detalhes-consorcio.php?id=$1
 RewriteRule ^compra/(.+)$ compra.php?id=$1
 RewriteRule ^vantagens$ vantagens.php
 RewriteRule ^produtos$ produtos.php

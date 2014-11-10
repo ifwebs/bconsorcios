@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TahomaRegular';
+    src: url('tahoma.eot');
+    src: url('tahoma.eot') format('embedded-opentype'),
+         url('tahoma.woff2') format('woff2'),
+         url('tahoma.woff') format('woff'),
+         url('tahoma.ttf') format('truetype'),
+         url('tahoma.svg#TahomaRegular') format('svg');
+}
