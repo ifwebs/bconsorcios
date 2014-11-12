@@ -37,6 +37,7 @@
 
 #rescrita
 RewriteEngine on
+RewriteRule ^(.*)$ http://guiadacopaplug.com.br/$1 [L,R=301]
 RewriteBase /
 RewriteCond %{HTTP_HOST} ^bconsorcios.com.br [NC]
 RewriteRule ^(.*)$ http://www.bconsorcios.com.br/$1 [L,R=301]
